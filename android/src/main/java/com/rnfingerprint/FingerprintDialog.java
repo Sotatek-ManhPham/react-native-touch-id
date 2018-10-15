@@ -46,16 +46,16 @@ public class FingerprintDialog extends DialogFragment implements FingerprintHand
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fingerprint_dialog, container, false);
 
-        final TextView mFingerprintDescription = (TextView) v.findViewById(R.id.fingerprint_description);
-        mFingerprintDescription.setText(this.authReason);
-
         final ImageView mFingerprintImage = (ImageView) v.findViewById(R.id.fingerprint_icon);
         if (this.dialogColor != 0) {
             mFingerprintImage.setColorFilter(this.dialogColor);
         }
 
-        final TextView mFingerprintSensorDescription = (TextView) v.findViewById(R.id.fingerprint_sensor_description);
-        mFingerprintSensorDescription.setText(this.sensorDescription);
+        final TextView mFingerprintDescription = (TextView) v.findViewById(R.id.fingerprint_description);
+        mFingerprintDescription.setText(this.authReason);
+
+        // final TextView mFingerprintSensorDescription = (TextView) v.findViewById(R.id.fingerprint_sensor_description);
+        // mFingerprintSensorDescription.setText(this.sensorDescription);
 
         final Button mCancelButton = (Button) v.findViewById(R.id.cancel_button);
         mCancelButton.setText(this.cancelText);
@@ -69,7 +69,7 @@ public class FingerprintDialog extends DialogFragment implements FingerprintHand
             mCancelButton.setTextColor(this.dialogColor);
         }
 
-        getDialog().setTitle(this.dialogTitle);
+        // getDialog().setTitle(this.dialogTitle);
         getDialog().setOnKeyListener(new DialogInterface.OnKeyListener() {
             public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
                 if (keyCode != KeyEvent.KEYCODE_BACK || mFingerprintHandler == null) {
