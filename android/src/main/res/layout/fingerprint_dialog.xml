@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingTop="20dp"
     android:weightSum="1">
 
     <!-- https://medium.com/@chrisbanes/appcompat-v23-2-age-of-the-vectors-91cbafa87c88#.btn3al2l2 appCompat works if app is srcCompat 7 activity-->
@@ -21,11 +22,11 @@
 
         <ImageView
             android:id="@+id/fingerprint_icon"
-            android:layout_width="62dp"
-            android:layout_height="62dp"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
             android:layout_marginLeft="25dp"
             android:gravity="left"
-            android:src="@drawable/ic_fp_40px1" />
+            android:src="@drawable/ic_fp_40px3" />
 
         <!-- <TextView
             android:id="@+id/fingerprint_sensor_description"
