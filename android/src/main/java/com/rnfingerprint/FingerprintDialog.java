@@ -38,7 +38,7 @@ public class FingerprintDialog extends DialogFragment implements FingerprintHand
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(DialogFragment.STYLE_NORMAL, android.R.style.Theme_Material_Light_Dialog);
+        setStyle(DialogFragment.STYLE_NORMAL, R.style.MyDialogTheme);
         setCancelable(false);
     }
 
@@ -54,7 +54,8 @@ public class FingerprintDialog extends DialogFragment implements FingerprintHand
         final TextView mFingerprintDescription = (TextView) v.findViewById(R.id.fingerprint_description);
         mFingerprintDescription.setText(this.authReason);
 
-        // final TextView mFingerprintSensorDescription = (TextView) v.findViewById(R.id.fingerprint_sensor_description);
+        // final TextView mFingerprintSensorDescription = (TextView)
+        // v.findViewById(R.id.fingerprint_sensor_description);
         // mFingerprintSensorDescription.setText(this.sensorDescription);
 
         final Button mCancelButton = (Button) v.findViewById(R.id.cancel_button);
@@ -68,7 +69,7 @@ public class FingerprintDialog extends DialogFragment implements FingerprintHand
         if (this.dialogColor != 0) {
             mCancelButton.setTextColor(this.dialogColor);
         }
-
+        getDialog().getWindow().setBackgroundDrawableResource(R.drawable.border);
         // getDialog().setTitle(this.dialogTitle);
         getDialog().setOnKeyListener(new DialogInterface.OnKeyListener() {
             public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
@@ -104,7 +105,6 @@ public class FingerprintDialog extends DialogFragment implements FingerprintHand
             this.isAuthInProgress = false;
         }
     }
-
 
     public void setCryptoObject(FingerprintManager.CryptoObject cryptoObject) {
         this.mCryptoObject = cryptoObject;

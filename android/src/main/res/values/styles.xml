@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+</resources>
